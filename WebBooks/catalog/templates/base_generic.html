@@ -1,45 +1,42 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-{% block title %}<title>Миp книг</title>{% endBlock %}
-<meta charset="utf-8"> ·
+{% block title %}<title>Миp книг</title>{% endblock %}
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,
-initial-scale=l">
+initial-scale=1">
 <link rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/
-bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/
-jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/
-js/bootstrap.min.js"></script>
-< 1 -- Добавление статического СSS-файла -->
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Добавление статического СSS-файла -->
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-{% blосk head %}
+{% block head %}
 <img src="{% static 'images/logotip.jpg' %}"
 style="width:1OOpx; height:1OOpx;" align="absmiddle">
-    <font size=7, соlоr="blue">Сайт "Мир книг"</fоnt>
+    <font size=7, соlоr="blue">Сайт "Мир книг"</font>
 {% endblock %}
 </head>
 <body>
 <div class="container-fluid">
 <div class="row">
 <div class="col-sm-2">
-{% blосk sidebar %}
-<ul class="sidebar-nav">
-<li><a href="{% url 'index' %}">Главная страница</а></li>
-<li><a href="">Bce книги</а></li>
-<li><a href="">Bce авторы</а></li>
-</ul>
-{% endblock %}
+    {% block sidebar %}
+    <ul class="sidebar-nav">
+    <li><a href="{% url 'index' %}">Главная страница</a></li>
+    <li><a href="">Bce книги</a></li>
+    <li><a href="">Bce авторы</a></li>
+    </ul>
+    {% endblock %}
 </div>
     <div class="col-sm-10 ">
-{% blосk content %} {% endblосk %}
-{% blосk footer %}
-{% blосk copyright %}
-<p>Copyright ООО "Люди и книги", 2020. Все права защищены</р>
-{% endblосk %}
-{% endblосk %}
+{% block content %}{% endblock %}
+{% block footer %}
+{% block copyright %}
+<p>Copyright ООО "Люди и книги", 2020. Все права защищены</p>
+{% endblock %}
+{% endblock %}
 </div>
 </div>
 </div>
