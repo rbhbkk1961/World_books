@@ -5,6 +5,7 @@ from django.views import generic
 
 class BookDetailView(generic.DetailView):
     model = Book
+    paginate_by = 3
 
 class BookListViews(generic.ListView):
     model = Book
