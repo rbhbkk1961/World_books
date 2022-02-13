@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from .models import BookInstance, Book, Author, Genre
 from django.views import generic
 
+class BookDetailView(generic.DetailView):
+    model = Book
+
 class BookListViews(generic.ListView):
     model = Book
 def index(request):
