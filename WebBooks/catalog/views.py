@@ -5,10 +5,15 @@ from django.views import generic
 
 class BookDetailView(generic.DetailView):
     model = Book
-    paginate_by = 3
+
 
 class BookListViews(generic.ListView):
     model = Book
+    paginate_by = 3
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 4
 def index(request):
     num_books = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()

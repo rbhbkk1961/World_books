@@ -7,10 +7,10 @@
     <p><strong>Аннотация</strong>{{book.summary }}</p>
     <p><strong>ISNB:</strong>{{ book.isbn}}</p>
     <p><strong>Язык:</strong>{{ book.language }}</p>
-        {% for author in book.author.all %}}
+        {% for author in book.author.all %}
             <p><strong>Автор:</strong>
-                <a href=""> {{ author.first.name }}
-                    {{author.Last_name}} </a></p>
+                <a href=""> {{ author.first_name }}
+                    {{ author.last_name }} </a></p>
         {% endfor %}
     <div style="margin-left:20px;margin-top20px">
         <h4>Количество экземпляров книг в БД </h4>
@@ -19,7 +19,7 @@
                         {% elif copy.status == 2 %} text-danger
                         {% else %} text-warning
                         {% endif %}"> {{ copy.get_status_display }} </p>
-            <p><strong>Издательство:</strong> {{copy.imprint}} </p>
+            <p><strong>Издательство:</strong> {{ copy.imprint }} </p>
             <p class="text-muted"><strong>Инветарный номер</strong> {{copy.id}}</p>
             <p><strong>Статус экземпляра книги в БД</strong> {{copy.status}}</p>
             {% endfor %}
