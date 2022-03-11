@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from catalog import views
 #from django.conf.urls import url
@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^books/$', views.BookListViews.as_view(), name='books'),
     url(r'book/(?P<pk>\d+)$', views.BookDetailView.as_view(), name='book-detail'),
     url(r'^authors/$', views.AuthorListView.as_view(), name='authors'),
+    url('accounts/', include('django.contrib.auth.urls'))
 ]
